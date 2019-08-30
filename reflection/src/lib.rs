@@ -290,7 +290,7 @@ impl<T> Reflection for Vec<T> where T: Reflection {
 }
 
 impl<T> Reflection for Option<T> where T: Reflection {
-    fn ty() -> Type { Type::Enum }
+    fn ty() -> Type { Type::Option }
     fn name() -> Name { Some( format!( "Option<{}>", name_!(T) ))}
     fn schema( id: Id ) -> Schema { field( id, Type::Option, name!(Self), expander!(Self) )}
     fn members() -> Schemas {
